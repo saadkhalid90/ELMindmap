@@ -1,87 +1,121 @@
+<!DOCTYPE html>
 <html>
-<style media="screen">
-  svg text {
-    font-family: 'Open Sans Condensed', sans-serif;
-  }
+  <style media="screen">
 
-  h4, label {
-    font-family: 'Open Sans', sans-serif;
-  }
-</style>
-<head>
-  <meta charset="utf-8">
-  <title>Mind Map - EL</title>
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,500,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="selectionDiv">
-    <h4 class="controlExplain QuestType">On most days, I feel</h4>
-    <select class = "selector type">
-      <option value="Most Days">Most Days</option>
-      <option value="School">School</option>
-      <option value="Classroom">Classroom</option>
-      <option value="Home">Home</option>
-    </select>
-  </div>
-  <div class="filtSelect Container">
-    <h4 class="controlExplain">Filter options</h4>
-    <div class="selects_flex_parent" style="display: flex; flex-direction: column">
-      <div class="selectContainer">
-        <label style="padding-bottom: 5px" for="citySelect">City</label>
-        <select id = "citySelect" class="filt selector citySelect" name="citySelect">
-          <option value=null>All</option>
-          <option value="Bangalore">Bangalore</option>
-          <option value="Chennai">Chennai</option>
-          <option value="Delhi">Delhi</option>
-          <option value="Dharwad">Dharwad</option>
-          <option value="Hyderabad">Hyderabad</option>
-          <option value="Mumbai">Mumbai</option>
-          <option value="Pune">Pune</option>
-        </select>
+  </style>
+  <head>
+    <meta charset="utf-8">
+    <title>Mind Map - EL</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+  </head>
+
+  <body>
+    <div class="container graygradient">
+      <div class="navigation">
+        <div class="logo">
+          <img src="./Resources/ELF-logo-black.png" alt="Enabling Leadership" class="ELF_logo"></img>
+        </div>
+        <a class="donate_button cursor" href="https://enablingleadership.org/donate/">
+          <p class="donate_button_text">Donate</p>
+        </a>
       </div>
-      <div class="selectContainer">
-        <label style="padding-bottom: 5px" for="sexSelect">Sex</label>
-        <select id="sexSelect" class="filt selector sexSelect" name="sexSelect">
-          <option value=null>All</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
-      </div>
-      <div class="selectContainer">
-        <label style="padding-bottom: 5px" for="programSelect">Program</label>
-        <select id="programSelect" class="filt selector programSelect" name="programSelect">
-          <option value=null>All</option>
-          <option value="BM">Build maya</option>
-          <option value="JFK">Just for kicks</option>
-          <option value="MB">Music basti</option>
-        </select>
-      </div>
-      <div class="selectContainer">
-        <label style="padding-bottom: 5px" for="yoiSelect">Year</label>
-        <select id="yoiSelect" class="filt selector yoiSelect" name="yoiSelect">
-          <option value=null>All</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="NA">NA</option>
-        </select>
-      </div>
-      <div class="selectContainer">
-        <label style="padding-bottom: 5px" for="ageGrpSelect">Age Group</label>
-        <select id="ageGrpSelect" class="filt selector ageGrpSelect" name="ageGrpSelect">
-          <option value=null>All</option>
-          <option value="Under 10">Under 10</option>
-          <option value="Under 12">under 12</option>
-          <option value="Under 14">under 14</option>
+      <div class="selectionDiv">
+        <p class="controlExplain QuestType">On most days, I feel</p>
+        <select class = "selector type cursor">
+          <option value="Most Days">Most Days</option>
+          <option value="School">School</option>
+          <option value="Classroom">Classroom</option>
+          <option value="Home">Home</option>
         </select>
       </div>
     </div>
-  </div>
-  <script src="index.js"></script>
-</body>
+
+    <div class="filtSelect Container container">
+      <h4 class="controlExplain">Filter options</h4>
+      <div class="selects_flex_parent">
+        <div class="selectContainer">
+          <label for="citySelect">City</label>
+          <select id = "citySelect" class="filt selector citySelect cursor" name="citySelect">
+            <option value=null>All</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Dharwad">Dharwad</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+          </select>
+        </div>
+        <div class="selectContainer">
+          <label for="sexSelect">Sex</label>
+          <select id="sexSelect" class="filt selector sexSelect cursor" name="sexSelect">
+            <option value=null>All</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="selectContainer">
+          <label for="programSelect">Program</label>
+          <select id="programSelect" class="filt selector programSelect cursor" name="programSelect">
+            <option value=null>All</option>
+            <option value="BM">Build maya</option>
+            <option value="JFK">Just for kicks</option>
+            <option value="MB">Music basti</option>
+          </select>
+        </div>
+        <div class="selectContainer">
+          <label for="yoiSelect">Year</label>
+          <select id="yoiSelect" class="filt selector yoiSelect cursor" name="yoiSelect">
+            <option value=null>All</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="NA">NA</option>
+          </select>
+        </div>
+        <div class="selectContainer">
+          <label for="ageGrpSelect">Age Group</label>
+          <select id="ageGrpSelect" class="filt selector ageGrpSelect cursor" name="ageGrpSelect">
+            <option value=null>All</option>
+            <option value="Under 10">Under 10</option>
+            <option value="Under 12">under 12</option>
+            <option value="Under 14">under 14</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="container SVGContainer graygradient">
+    </div>
+
+    <footer>
+      <div class="footer_contain container">
+        <div class="footer_logo">
+          <img src="./Resources/ELF-logo-black.png" alt="Enabling Leadership" class="ELF_logo_footer"></img>
+          <img src="https://enablingleadership.org/wp-content/uploads/2019/03/guidestar-logo.png" alt="Seal of Transparency" class="seal"></img>
+        </div>
+        <div class="footer_space">
+          <div>
+            <p style="font-weight: 700; margin-bottom: 5px;">Write to us at </p>
+            <p style="margin: 0px">info@enablingleadership.org</p>
+            <p style="font-weight: 700; margin: 7px 0px; font-size: 14px;">Copyright © 2019 Enabling Leadership. All Rights Reserved. </p>
+          </div>
+          <div>
+            <p style="font-weight: 700; margin-bottom: 5px;">Get in Touch</p>
+            <p style="margin: 5px 0px;"><a style="color: black; text-decoration: none;" href="https://enablingleadership.org/contact/" class="cursor">Contact Us</a></p>
+            <p style="margin: 5px 0px;"><a style="color: black; text-decoration: none;" href="https://enablingleadership.org/category/news/" class="cursor">News and Press</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+
 </html>
-<!DOCTYPE html>

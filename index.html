@@ -1,0 +1,87 @@
+<html>
+<style media="screen">
+  svg text {
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
+
+  h4, label {
+    font-family: 'Open Sans', sans-serif;
+  }
+</style>
+<head>
+  <meta charset="utf-8">
+  <title>Mind Map - EL</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="selectionDiv">
+    <h4 class="controlExplain QuestType">On most days, I feel</h4>
+    <select class = "selector type">
+      <option value="Most Days">Most Days</option>
+      <option value="School">School</option>
+      <option value="Classroom">Classroom</option>
+      <option value="Home">Home</option>
+    </select>
+  </div>
+  <div class="filtSelect Container">
+    <h4 class="controlExplain">Filter options</h4>
+    <div class="selects_flex_parent" style="display: flex; flex-direction: column">
+      <div class="selectContainer">
+        <label style="padding-bottom: 5px" for="citySelect">City</label>
+        <select id = "citySelect" class="filt selector citySelect" name="citySelect">
+          <option value=null>All</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Dharwad">Dharwad</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Pune">Pune</option>
+        </select>
+      </div>
+      <div class="selectContainer">
+        <label style="padding-bottom: 5px" for="sexSelect">Sex</label>
+        <select id="sexSelect" class="filt selector sexSelect" name="sexSelect">
+          <option value=null>All</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <div class="selectContainer">
+        <label style="padding-bottom: 5px" for="programSelect">Program</label>
+        <select id="programSelect" class="filt selector programSelect" name="programSelect">
+          <option value=null>All</option>
+          <option value="BM">Build maya</option>
+          <option value="JFK">Just for kicks</option>
+          <option value="MB">Music basti</option>
+        </select>
+      </div>
+      <div class="selectContainer">
+        <label style="padding-bottom: 5px" for="yoiSelect">Year</label>
+        <select id="yoiSelect" class="filt selector yoiSelect" name="yoiSelect">
+          <option value=null>All</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="NA">NA</option>
+        </select>
+      </div>
+      <div class="selectContainer">
+        <label style="padding-bottom: 5px" for="ageGrpSelect">Age Group</label>
+        <select id="ageGrpSelect" class="filt selector ageGrpSelect" name="ageGrpSelect">
+          <option value=null>All</option>
+          <option value="Under 10">Under 10</option>
+          <option value="Under 12">under 12</option>
+          <option value="Under 14">under 14</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
+<!DOCTYPE html>

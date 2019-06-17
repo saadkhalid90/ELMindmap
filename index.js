@@ -55,7 +55,7 @@ async function readAndDraw(){
 
     console.log(typeExplain(type));
 
-    d3.select('h4.controlExplain.QuestType')
+    d3.select('p.controlExplain.QuestType')
       .text(typeExplain(type));
 
     let city = getValSel('.selector.citySelect')
@@ -100,7 +100,7 @@ let radScale //= d3.scaleSqrt().domain([0, 10]).range([1, 16]);
 
 function drawMindMap(data, varName, className){
   // remove any previous SVGs in body
-  d3.select('body').select('svg' + '.' + className).remove()
+  d3.select('.SVGContainer').select('div' + '.' + className).remove()
 
   // setup params
   let widthSVG = 500;
@@ -109,10 +109,14 @@ function drawMindMap(data, varName, className){
       width = widthSVG - margin.left - margin.right,
       height = heightSVG - margin.top - margin.bottom;
 
-  let svgG = d3.select('body').append('svg')
+  let svgG = d3.select('.SVGContainer').append('div')
+      .attr('class', 'mind_map_div ' + className)
+      .append('svg')
       .classed(className, true)
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom)
+      .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+      .attr("preserveAspectRatio", "xMinYMin meet")
     .append('g')
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
@@ -132,9 +136,8 @@ function drawMindMap(data, varName, className){
 
   radScale = d3.scaleSqrt().domain([0, 13]).range([1, 17]);
 
-  if (className == 'mindMapBaseline')
 
-  makeNestCircLegend(CSSSelect = 'svg', [50, 40], [2, 7, 15], radScale, '')
+  makeNestCircLegend(CSSSelect = 'svg.mindMapBaseline', [50, 40], [2, 7, 15], radScale, '')
 
   console.log(summarised);
 

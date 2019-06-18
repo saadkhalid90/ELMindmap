@@ -151,6 +151,15 @@ h4, label {
   margin-top: 30px;
 }
 
+.footer_link {
+  color: #715c33;
+  transition: 0.25s ease-in-out;
+}
+
+.footer_link:hover {
+  color: black;
+}
+
 @media screen and (max-width: 995px) {
   .selects_flex_parent {
     flex-direction: column;
